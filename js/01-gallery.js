@@ -41,11 +41,11 @@ function handleClick(event) {
     <img src="${source}" width="800" height="600">
 `,
     {
-      onShow: () => {
+      onShow: (instance) => {
         document.addEventListener("keydown", handleKeyDown);
       },
-      onClose: () => {
-        document.removeEventListener("keydown", handleKeyDown);
+      onClose: (instance) => {
+        document.addEventListener("keydown", handleKeyDown);
       },
     },
   );
@@ -53,7 +53,7 @@ function handleClick(event) {
   function handleKeyDown(event) {
     if (event.key === "Escape") {
       instance.close();
-    }
+   }
   }
 
   instance.show();
