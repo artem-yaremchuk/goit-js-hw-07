@@ -21,20 +21,8 @@ function createMarkup(arr) {
     .join("");
 }
 
-const lightbox = new SimpleLightbox(".gallery__link", {
+const lightbox = new SimpleLightbox(".gallery a", {
   captionsData: "alt",
   captionPosition: "bottom",
-  captionDelay: 250,
-  onShow: (instance) => {
-    document.addEventListener("keydown", handleKeyDown);
-  },
-  onClose: (instance) => {
-    document.addEventListener("keydown", handleKeyDown);
-  },
+  captionDelay: "250",
 });
-
-function handleKeyDown(event) {
-  if (event.key === "Escape") {
-    instance.close();
-  }
-}

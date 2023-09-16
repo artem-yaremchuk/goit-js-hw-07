@@ -45,7 +45,7 @@ function handleClick(event) {
         document.addEventListener("keydown", handleKeyDown);
       },
       onClose: (instance) => {
-        document.addEventListener("keydown", handleKeyDown);
+        document.removeEventListener("keydown", handleKeyDown);
       },
     },
   );
